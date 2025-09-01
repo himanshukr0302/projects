@@ -1,0 +1,7 @@
+streamlit
+tensorflow
+opencv-python
+numpy
+Pillow
+gTTS
+playsound==1.2.2
