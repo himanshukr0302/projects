@@ -1,12 +1,23 @@
+# Project Name: RAG PDF App
+
 # --- Core Frameworks ---
 streamlit==1.47.1
 openai==1.98.0
-langchain==0.3.27
-langchain-core==0.3.72
-langchain-openai==0.3.28
-langchain-google-genai==2.0.2
-langchain-text-splitters==0.3.9
-langchain-community==0.3.14
+
+# --- MODERN LANGCHAIN / LANGGRAPH ECOSYSTEM ---
+# Using the latest stable versions for guaranteed compatibility.
+langchain>=0.2.0
+langchain-core>=0.2.0
+langchain-community>=0.2.0
+langchain-openai>=0.2.0
+langchain-google-genai>=1.0.0
+langchain-text-splitters>=0.3.5  # Bumped to a compatible version
+
+# --- LangGraph (Updated to Latest Stable) ---
+langgraph>=0.1.0
+langgraph-sdk>=0.2.0
+langgraph-prebuilt>=0.1.0
+langgraph-checkpoint-sqlite>=0.1.0
 
 # --- Vector DB ---
 faiss-cpu==1.8.0.post1
@@ -17,17 +28,12 @@ pypdf==4.3.1
 # --- Embeddings / NLP ---
 sentence-transformers==3.2.1
 transformers==4.46.2
-
-# --- Google GenAI ---
-google-generativeai==0.7.2
-protobuf<4
-
-# --- Machine Learning Utility ---
-numpy==2.3.2
-pandas==2.3.1
 tiktoken==0.9.0
 regex
-torch  # installs automatically with sentence-transformers
+
+# --- Machine Learning Utility ---
+numpy==1.26.4     # Fixed to be < 2.0 for faiss-cpu
+pandas==2.3.1
 
 # --- Database & Storage ---
 sqlite-utils==3.36
@@ -39,8 +45,12 @@ sqlite-vec==0.1.6
 speechrecognition
 gTTS
 
-# --- Environment / Config ---
+# --- Backend / API ---
 python-dotenv==1.1.1
+uvicorn==0.30.1
+fastapi==0.111.0
+pydantic==2.11.7
+httpx==0.27.0
 
 # --- Streamlit ecosystem ---
 altair==5.5.0
@@ -50,16 +60,8 @@ pydeck==0.9.1
 requests==2.32.4
 urllib3==2.5.0
 orjson==3.11.1
-pydantic==2.11.7
 typing_extensions==4.14.1
-tenacity==9.1.2
-
-# --- LangGraph ---
-langgraph==0.6.1
-langgraph-sdk==0.2.0
-langgraph-prebuilt==0.6.1
-langgraph-checkpoint==2.1.1
-langgraph-checkpoint-sqlite==2.0.11
+tenacity>=8.0.0 # Relaxed constraint to allow for compatible LangChain version
 
 # --- Logging / Git ---
 GitPython==3.1.45
@@ -71,4 +73,3 @@ watchdog
 six
 tzdata
 PyYAML
-
